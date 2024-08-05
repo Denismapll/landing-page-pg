@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LandingPage</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <?php wp_head(); ?>
 </head>
@@ -62,9 +61,24 @@
       .foot-fix p {
         opacity: 0.5;
       }
+
       .botao {
         color: <?php echo ($color3) ?>;
-        font-family:sans-serif;
+        font-family: sans-serif;
+      }
+
+      .botoes-compartilhar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .img-compartilhar {
+        position: absolute;
+        left: 0;
+        margin-left: 15px;
+        filter: grayscale(1) contrast(10);
       }
     </style>
     <section>
@@ -76,8 +90,7 @@
         <div class="row justify-content-center">
           <div class="col-12 col-md-5 d-flex justify-content-between">
             <div class="col-2">
-              <button href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 100%; padding: 3px;"><img
-                  src="<?php echo $my_plugin; ?>/img/share-nobg.png" alt="" srcset="" style="width: 28px; background: transparent; "></button>
+              <button href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 100%; padding: 3px;"><img src="<?php echo $my_plugin; ?>/img/share-nobg.png" alt="" srcset="" style="width: 28px; background: transparent; "></button>
             </div>
             <div class="col-2"></div>
           </div>
@@ -87,66 +100,71 @@
         <div class="col-md-12 col-12 h-100">
           <div class="d-flex justify-content-center align-items-center h-25 mb-2">
             <img data-aos="fade-down" src="<?php if (has_post_thumbnail()) {
-              the_post_thumbnail_url();
-            } else {
-              echo $my_plugin . '/img/grade.jpg';
-            }
-            ; ?>" width="100" alt="" srcset="" class="mt-3 photo">
+                                              the_post_thumbnail_url();
+                                            } else {
+                                              echo $my_plugin . '/img/grade.jpg';
+                                            }; ?>" width="100" alt="" srcset="" class="mt-3 photo">
           </div>
           <div class="d-flex flex-row justify-content-center align-items-center" data-aos="flip-left" data-aos-delay="200">
             <h3 class="fw-bold botao"><?php the_title(); ?></h3>
           </div>
           <div class="d-flex flex-row justify-content-center align-items-center gap-3">
-            <?php if ($facebook): $tim = 200;?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $facebook; ?>">
+            <?php if ($facebook) : $tim = 200; ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $facebook; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/facebook.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
-            <?php if ($instagram): ?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $instagram; ?>">
+            <?php $tim += 100;
+            endif; ?>
+            <?php if ($instagram) : ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $instagram; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/instagram.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
-            <?php if ($linkedin): ?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $linkedin; ?>">
+            <?php $tim += 100;
+            endif; ?>
+            <?php if ($linkedin) : ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $linkedin; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/linkedin.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
-            <?php if ($twitter): ?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $twitter; ?>">
+            <?php $tim += 100;
+            endif; ?>
+            <?php if ($twitter) : ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $twitter; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/twitter.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
-            <?php if ($whatsapp): ?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $whatsapp; ?>">
+            <?php $tim += 100;
+            endif; ?>
+            <?php if ($whatsapp) : ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $whatsapp; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/whatsapp.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
-            <?php if ($youtube): ?>
-              <a data-aos="flip-left" data-aos-delay="<?= $tim;?>" target="blank_" href="<?php echo $youtube; ?>">
+            <?php $tim += 100;
+            endif; ?>
+            <?php if ($youtube) : ?>
+              <a data-aos="flip-left" data-aos-delay="<?= $tim; ?>" target="blank_" href="<?php echo $youtube; ?>">
                 <img src="<?php echo $my_plugin; ?>/img/youtube.png" width="32">
               </a>
-            <?php $tim += 100; endif; ?>
+            <?php $tim += 100;
+            endif; ?>
           </div>
           <div class="d-flex justify-content-center mt-3">
 
             <div class="d-flex flex-column justify-content-center align-items-center col-md-4 col-12 col-sm-8">
               <?php
               // Verifica se existem valores e se é um array
-              if (!empty($meta_values) && is_array($meta_values)):  $timer = 100;
-                foreach ($meta_values as $meta_value):
-                  if($meta_value['url']):
-                  ?>
-                  <a href="<?= $meta_value['url'] ?>" class="w-100" data-aos="zoom-in" data-aos-delay="<?= $timer;?>" data-aos-duration="500" data-aos-offset="0">
-                    <button type="button" style="box-shadow: 1px 1px 11px -3px black"
-                      class="rounded-5 btn btn-outline-light m-2 w-100 fs-4 position-relative botao">
-                      <img src="<?= wp_get_attachment_url($meta_value['imagem']); ?>"
-                        style="position: absolute; left: 5px; top: 50%;transform: translate(0, -50%); width: 34px; border-radius: 100%; aspect-ratio: 1 / 1;" alt="" srcset="">
-                      <p style="padding: 0 25px; margin: 0;"><?= $meta_value['texto'] ?></p>
-                      
-                    </button>
-                  </a>
-                <?php  $timer += 100 ;endif ;endforeach;
+              if (!empty($meta_values) && is_array($meta_values)) :  $timer = 100;
+                foreach ($meta_values as $meta_value) :
+                  if ($meta_value['url']) :
+              ?>
+                    <a href="<?= $meta_value['url'] ?>" class="w-100" data-aos="zoom-in" data-aos-delay="<?= $timer; ?>" data-aos-duration="500" data-aos-offset="0">
+                      <button type="button" style="box-shadow: 1px 1px 11px -3px black" class="rounded-5 btn btn-outline-light m-2 w-100 fs-4 position-relative botao">
+                        <img src="<?= wp_get_attachment_url($meta_value['imagem']); ?>" style="position: absolute; left: 5px; top: 50%;transform: translate(0, -50%); width: 34px; border-radius: 100%; aspect-ratio: 1 / 1;" alt="" srcset="">
+                        <p style="padding: 0 25px 0 35px; margin: 0; font-size: 18px;"><?= $meta_value['texto'] ?></p>
+
+                      </button>
+                    </a>
+              <?php $timer += 100;
+                  endif;
+                endforeach;
               endif; ?>
             </div>
 
@@ -164,11 +182,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <a href="https://twitter.com/intent/tweet?text=<?= get_permalink(); ?>"><button type="button"
-                class="btn btn-info w-100 text-left mt-2" data-bs-dismiss="modal">Compartilhe no Twitter</button></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?=get_permalink(); ?>"><button type="button"
-                class="btn btn-info w-100 text-left mt-2" data-bs-dismiss="modal">Compartilhe no Facebook</button></a>
-            <!-- <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=get_permalink(); ?>"><button type="button"
+            <a href="https://twitter.com/intent/tweet?text=<?= get_permalink(); ?>"><button type="button" class="btn btn-secondary w-100 text-left mt-2 botoes-compartilhar position-relative" data-bs-dismiss="modal">Compartilhe no X<img src="https://blog.mddweb.com.br/wp-content/plugins/mddw-lp/img/twitter.png" width="32" class="img-compartilhar"></button></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_permalink(); ?>"><button type="button" class="btn btn-secondary w-100 text-left mt-2 botoes-compartilhar position-relative" data-bs-dismiss="modal">Compartilhe no Facebook<img src="https://blog.mddweb.com.br/wp-content/plugins/mddw-lp/img/facebook.png" width="32" class="img-compartilhar"></button></a>
+            <!-- <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?= get_permalink(); ?>"><button type="button"
                 class="btn btn-info w-100 text-left mt-2" data-bs-dismiss="modal">Compartilhe no Linkedin</button></a> -->
 
           </div>
@@ -179,15 +195,13 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <?php wp_footer(); ?>
   </section>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
-</script>
+    AOS.init();
+  </script>
 
 </body>
 
