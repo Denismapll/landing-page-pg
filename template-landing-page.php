@@ -70,7 +70,7 @@
     <section>
 
       <section class="text-center text-white foot-fix">
-        <p>Pagina Criada e distribuida pela <a class="fw-bold" href="https://mddweb.com.br">MDD Web</a></p>
+        <p>Pagina Criada e distribuida pela <a class="fw-bold  text-white" href="https://mddweb.com.br">MDD Web</a></p>
       </section>
       <header class="container pt-4">
         <div class="row justify-content-center">
@@ -160,7 +160,7 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 fw-bold text-white" id="exampleModalLabel">Compartilhe esta pagina !</h1>
+            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Compartilhe esta pagina !</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
