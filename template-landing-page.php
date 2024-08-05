@@ -141,7 +141,7 @@
                     <button type="button" style="box-shadow: 1px 1px 11px -3px black"
                       class="rounded-5 btn btn-outline-light m-2 w-100 fs-4 position-relative botao">
                       <img src="<?= wp_get_attachment_url($meta_value['imagem']); ?>"
-                        style="position: absolute; left: 5px; top: 50%;transform: translate(0, -50%); width: 34px; border-radius: 100%;" alt="" srcset="">
+                        style="position: absolute; left: 5px; top: 50%;transform: translate(0, -50%); width: 34px; border-radius: 100%; aspect-ratio: 1 / 1;" alt="" srcset="">
                       <p style="padding: 0 25px; margin: 0;"><?= $meta_value['texto'] ?></p>
                       
                     </button>
@@ -160,7 +160,7 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Compartilhe esta pagina !</h1>
+            <h1 class="modal-title fs-5 fw-bold text-white" id="exampleModalLabel">Compartilhe esta pagina !</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
